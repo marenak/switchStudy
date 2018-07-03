@@ -1,0 +1,21 @@
+// 1 - Test if ROS, Gazebo and Turtlebot sim are installed
+// 2 - Create catkin_ws and add dle_experiment to src/ folder
+// 3 - Do a clean compilation : 
+sudo rm -r build devel
+catkin_make clean
+catkin_make
+// 4 - Then source the file in the devel space : 
+source <PATH TO WORKSPACE>/catkin_ws/devel/setup.bash
+
+// 5 - Add the .world file to the bash : 
+export TURTLEBOT_GAZEBO_WORLD_MAP_FILE=<PATH TO>/gazebo_custom_worlds/file.world
+
+// 6 - Launch Gazebo simulation in the file.world exported earlier : 
+roslaunch turtlebot_gazebo turtlebot_world.launch
+
+// 7 - Start the dle_experiment executable : 
+rosrun dle_experiment dle_experiment_action
+
+// ENJOY!!! 
+
+
